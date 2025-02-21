@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #song-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted for wider cards */
+            gap: 20px;
+            width: 80%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            max-height: 80vh; /* Set to 80% of the screen height */
+            overflow-y: auto; /* Scrollable if content exceeds height */
+        }
+
+        .song-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        .song-item img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .song-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .song-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .song-item p {
+            font-size: 14px;
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>My Music Player</h1>
+
+        <!-- Display Song List -->
+        <ul id="song-list">
+            <li class="song-item" onclick="playSong('Another Love - Tom Odell')">
+                <img src="https://th.bing.com/th/id/OIP.9c0ro5lNUJ4phEotEW_9DwHaEK?w=311&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="MX Player">
+                <div class="song-title">Another Love - Tom Odell</div>
+            </li>
+            <li class="song-item" onclick="playSong('Co2 - Prateek Kuhad')">
+                <img src="https://th.bing.com/th/id/OIP.acc9Bt6tq4ChA_uLZ7UizQHaFj?w=223&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="MX Player">
+                <div class="song-title">Co2 - Prateek Kuhad</div>
+            </li>
+            <li class="song-item" onclick="playSong('Cry For Me - The Weeknd')">
+                <img src="https://th.bing.com/th/id/OIP.suGXCrsFpL6Q29dh-QoVpwHaHa?w=170&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="MX Player">
+                <div class="song-title">Cry For Me - The Weeknd</div>
+            </li>
+            <li class="song-item" onclick="playSong('Die For You - The Weeknd')">
+                <img src="https://th.bing.com/th/id/OIP.qm6Hjhy-sd8GBk5n0NifpQAAAA?w=300&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="MX Player">
+                <div class="song-title">Die For You - The Weeknd</div>
+            </li>
+            <li class="song-item" onclick="playSong('Give Me Mercy - The Weeknd')">
+                <img src="https://th.bing.com/th/id/OIP.E9sTizDgvlfH8eYLuYHKXwHaEK?w=293&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="MX Player">
+                <div class="song-title">Give Me Mercy - The Weeknd</div>
+            </li>
+            <li class="song-item" onclick="playSong('Hurry Up Tomorrow - The Weeknd')">
+                <img src="https://th.bing.com/th?id=OIF.i6ld%2bNwtlKKfnjUveXrH9Q&w=170&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="MX Player">
+                <div class="song-title">Hurry Up Tomorrow - The Weeknd</div>
+            </li>
+            <li class="song-item" onclick="playSong('Moral of the Story - Ashe')">
+                <img src="https://ts2.mm.bing.net/th?id=OIP.RtzApHMecThoquUial2lhAAAAA&pid=15.1" alt="MX Player">
+                <div class="song-title">Moral of the Story - Ashe</div>
+            </li>
+            <li class="song-item" onclick="playSong('Open Hearts - The Weeknd')">
+                <img src="https://th.bing.com/th/id/OIF.eDF6CbqggZkvM2T62FWD9Q?w=329&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="MX Player">
+                <div class="song-title">Open Hearts - The Weeknd</div>
+            </li>
+            <li class="song-item" onclick="playSong('Blinding Lights - The Weeknd')">
+                <img src="https://th.bing.com/th/id/OIP.UbAJexNUCBcG4TyJ9Hlb9wHaE5?w=251&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="MX Player">
+                <div class="song-title">Blinding Lights - The Weeknd</div>
+            </li>
+        </ul>
+
+        <!-- Audio Player -->
+        <audio id="audio-player" controls>
+            <source id="audio-source" src="" type="audio/mp4">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Link to External JavaScript File -->
+    <script src="music.js"></script>
+</body>
+</html>
