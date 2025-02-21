@@ -9,12 +9,20 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background: linear-gradient(135deg, #7a0453, #92066f); /* Purple Gradient */
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            color: #333;
+            color: #fff;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .container {
@@ -24,7 +32,7 @@
             max-width: 1200px;
             gap: 25px;
             padding: 20px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
             margin: 20px;
@@ -61,6 +69,14 @@
             color: #444;
             text-align: center;
             margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-align: justify;
         }
 
         .button {
@@ -105,29 +121,30 @@
 </head>
 <body>
     <div class="container">
-        <!-- First Column -->
+        <!-- First Column: songs -->
         <div class="column">
-            <img src="https://th.bing.com/th/id/OIP.iirGqmsTYqWD1F8KccPXOQHaLp?w=199&h=313&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="logo" alt="Books">
-            <h2>Books</h2>
-            <!-- This will open the "book.html" page when clicked -->
-            <a href="book.html" class="button" target="_blank">Read Now</a>
+            <img src="https://th.bing.com/th/id/OIP.mBo6l8gaAbySi3GRqZxqxAHaE7?w=285&h=190&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="logo" alt="PLAYLIST">
+            <h2>PLAYLIST</h2>
+            <p class="description">Discover a world of music and rhythm. Explore a wide variety of songs to inspire and elevate your mood.</p>
+            <a href="listen.html" class="button" target="_blank">LISTEN NOW</a>
         </div>
 
-        <!-- Second Column -->
+        <!-- Second Column: Videos -->
         <div class="column">
             <img src="https://th.bing.com/th/id/OIP.Q1mMWdircIy-Ky55QSqdNgHaHa?w=174&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="logo" alt="Videos">
             <h2>Recommended Videos</h2>
-            <!-- This will open the "videos.html" page when clicked -->
+            <p class="description">Watch carefully selected videos that will entertain and inform you. Dive into a variety of engaging topics, from tutorials to motivational content.</p>
             <a href="videos.html" class="button" target="_blank">Watch Now</a>
         </div>
 
-        <!-- Third Column -->
+        <!-- Third Column: Articles -->
         <div class="column">
             <img src="https://th.bing.com/th/id/OIP.WH2PD93UsqGL307ZTcudwQHaKe?w=208&h=294&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="logo" alt="Articles">
             <h2>Articles</h2>
-            <!-- This will open the "articles.html" page when clicked -->
+            <p class="description">Read insightful articles that cover a range of topics, from science to personal development. Gain deeper knowledge and perspectives on the world.</p>
             <a href="articles.html" class="button" target="_blank">Read Now</a>
         </div>
     </div>
 </body>
 </html>
+
